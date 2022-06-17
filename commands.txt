@@ -1,0 +1,3 @@
+sudo apt-get install python3.8-dev
+g++ -std=c++11 -Wall -I/usr/include/python3.8/ -c main.cpp -fPIE $(python3-config --cflags --embed) -o main.o
+g++ main.o $(python3-config --embed --ldflags) -o teste01
