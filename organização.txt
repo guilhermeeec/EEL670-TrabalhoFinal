@@ -1,0 +1,9 @@
++ Funções em C++
+
+std::string queryDadosTemperatura()
+
+Chama a função em Python que retorna um char* com os dados
+no formato 0,10:40,29;1,10:54,32;2,11:23,21
+(indice,hora,temp;indice,hora,temp)
+Retorna string deste tipo
+
