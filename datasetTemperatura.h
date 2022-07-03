@@ -1,5 +1,6 @@
 #pragma once
 #include "dataset.h"
+#include "excecoes.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ struct temperatura_t {
 class DatasetTemperatura : public Dataset {
     public:
         DatasetTemperatura();
+
         void consultarDados();
         virtual void exibirDados();
         void exibirEstatisticas(); 
@@ -19,4 +21,8 @@ class DatasetTemperatura : public Dataset {
     private:
         vector<string> vetorDados;
         vector<temperatura_t> vetorTemperaturas;
+        
+        float calcularMedia();
+        void calcularMaxMin(float&, float&);
+        unsigned calcularIntervalo();
 };

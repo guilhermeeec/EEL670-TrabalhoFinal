@@ -9,6 +9,7 @@ class Dataset {
     friend ostream& operator<<(ostream&, Dataset*);
     public:
         Dataset();
+        
         void consultarDados();
         virtual void exibirDados();
         void exibirEstatisticas(); 
