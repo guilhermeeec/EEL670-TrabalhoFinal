@@ -1,5 +1,17 @@
 #include "dumbApiDebug.h"
 
+string dadosTemperatura(DADOS_TEMPERATURA_EXEMPLO);
+string dadosPorta(DADOS_PORTA_EXEMPLO);
+
 string queryDadosTemperatura() {
-    return "0,10,29;1,13,32;2,16,21;3,18,27";
+    return dadosTemperatura;
+}
+
+string queryDadosPorta() {
+    return dadosPorta;
+}
+
+int insertDadosPorta(string dadoNovo) {
+    dadosPorta.append(dadoNovo);
+    return 0;
 }

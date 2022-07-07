@@ -1,4 +1,5 @@
 #include "datasetTemperatura.h"
+#include "excecoes.h"
 #include "dumbApiDebug.h"
 #include <iomanip>
 

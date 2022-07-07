@@ -11,6 +11,7 @@ class Dataset {
         Dataset();
         
         void consultarDados();
+        void publicarDados(string);
         virtual void exibirDados();
         void exibirEstatisticas(); 
 

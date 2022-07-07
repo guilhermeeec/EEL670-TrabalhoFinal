@@ -2,9 +2,10 @@
 
 Dataset::Dataset() : vetorDados(0) {}
 
-void Dataset::consultarDados() {};
-void Dataset::exibirDados() {};
-void Dataset::exibirEstatisticas() {};
+void Dataset::consultarDados() {}
+void Dataset::exibirDados() {}
+void Dataset::publicarDados(string) {}
+void Dataset::exibirEstatisticas() {}
 
 ostream& operator<<(ostream& out, Dataset* dados) {
     dados->exibirDados();

@@ -1,6 +1,5 @@
 #pragma once
 #include "dataset.h"
-#include "excecoes.h"
 
 using namespace std;
 
