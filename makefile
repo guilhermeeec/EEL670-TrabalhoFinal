@@ -1,4 +1,9 @@
-CORE_DEV_CPP_FILES = dataset.cpp datasetTemperatura.cpp dumbApiDebug.cpp excecoes.cpp main.cpp
+CORE_DEV_CPP_FILES = dataset.cpp \
+					 datasetTemperatura.cpp \
+					 datasetPorta.cpp \
+					 dumbApiDebug.cpp \
+					 excecoes.cpp \
+					 main.cpp
 
 CORE_DEV_CPP_OBJECTS = $(CORE_DEV_CPP_FILES:.cpp=.o)
 

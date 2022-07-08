@@ -14,6 +14,7 @@ class Dataset {
         void publicarDados(string);
         virtual void exibirDados();
         void exibirEstatisticas(); 
+        void atualizarDados();
 
     private:
         vector<string> vetorDados;

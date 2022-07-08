@@ -32,6 +32,10 @@ void DatasetPorta::consultarDados() {
     }
 }
 
+void DatasetPorta::publicarDados(string dado) {
+    insertDadosPorta(dado);
+}
+
 void DatasetPorta::exibirDados() {
     cout << left << setw(9) << "ID" 
          << left << setw(9) << "Horario" 
@@ -55,7 +59,56 @@ void DatasetPorta::exibirEstatisticas() {
     cout << left << setw(25) << "Intervalo" << intervalo << endl;
 } 
 
+void DatasetPorta::abrirFecharPorta() {
+    bool abertaNoMomento = (vetorDados.end()-1)->aberta;
+    unsigned ultimoId = (vetorDados.end()-1)->id;
+
+    porta_t novoDado;
+    novoDado.hora = 10;
+    novoDado.id = ultimoId+1;
+    if(abertaNoMomento) {
+        novoDado.aberta = false;
+        cout << "Porta fechada" << endl;
+    } else {
+        novoDado.aberta = true;
+        cout << "Porta aberta" << endl;
+    }
+    vetorDados.push_back(novoDado);
+
+    string idString(to_string(novoDado.id));
+    string horaString(to_string(novoDado.hora));
+    string boolString = novoDado.aberta ? "True" : "False";
+    string dado(idString + "," + horaString + "," + boolString);
+
+    publicarDados(dado);
+}
+
 unsigned DatasetPorta::calcularTempoAberta() {
+    unsigned tempoInicial = 0;
+    unsigned tempoFinal = 0;
+    unsigned tempoAberta = 0;
+    bool ultimoEstado = false;
+    for (porta_t amostra : vetorDados) {
+
+        // Viu que a porta foi aberta -> registra o tempo inicial
+        if (amostra.aberta == true && ultimoEstado == false) {
+            tempoInicial = amostra.hora;
+            ultimoEstado = true;
+        } 
+        
+        // Viu que a porta foi fechada -> registra o tempo inicial
+        else if (amostra.aberta == false && ultimoEstado == true) {
+            tempoFinal = amostra.hora;
+            tempoAberta += tempoFinal - tempoInicial;
+            ultimoEstado = false;
+        }
+    }
+
+    // Terminou aberta -> registra tempo final
+    if(ultimoEstado == true)
+        tempoAberta += (vetorDados.end()-1)->hora - tempoInicial;
+
+    return tempoAberta;
 }
 
 unsigned DatasetPorta::calcularIntervalo() {

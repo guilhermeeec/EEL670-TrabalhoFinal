@@ -7,6 +7,11 @@ void Dataset::exibirDados() {}
 void Dataset::publicarDados(string) {}
 void Dataset::exibirEstatisticas() {}
 
+void Dataset::atualizarDados() {
+    vetorDados.clear();
+    consultarDados();
+}
+
 ostream& operator<<(ostream& out, Dataset* dados) {
     dados->exibirDados();
     return out;

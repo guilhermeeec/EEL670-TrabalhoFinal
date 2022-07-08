@@ -1,5 +1,6 @@
 #include "dataset.h"
 #include "datasetTemperatura.h"
+#include "datasetPorta.h"
 
 void imprimeMenu() {
     //system("cls");
@@ -16,13 +17,18 @@ void imprimeMenu() {
 
 int main() {
     DatasetTemperatura dadosTemperatura;
+    DatasetPorta dadosPorta;
 
     while(true) {
         imprimeMenu();
         std::cout << "\nOpcao[1-5/0]: ";
+
         std::string entradaUsuario;
         getline(std::cin, entradaUsuario);
         unsigned opcao = (unsigned)strtoul(entradaUsuario.c_str(), NULL, 10);
+
+        dadosTemperatura.atualizarDados();
+        dadosPorta.atualizarDados();
         
         switch (opcao) {
            case 0:
@@ -38,12 +44,15 @@ int main() {
             break;
 
             case 3:
+            cout << &dadosPorta << endl;
             break;
 
             case 4:
+            dadosPorta.exibirEstatisticas();
             break;
 
             case 5:
+            dadosPorta.abrirFecharPorta();
             break;
 
             default:
