@@ -101,7 +101,7 @@ unsigned DatasetTemperatura::calcularIntervalo() {
     unsigned deltaT;
     try {
         deltaT = tempoFinal - tempoInicial;
-        if(deltaT < 0) throw ExcecaoHorarioInconsistente();
+        if(tempoFinal < tempoInicial) throw ExcecaoHorarioInconsistente();
     }
     catch (ExcecaoHorarioInconsistente& excecao) {
         cerr << excecao.what() << "Alerta para problemas no sincronismo do BD (intervalo estranho)" << endl;
