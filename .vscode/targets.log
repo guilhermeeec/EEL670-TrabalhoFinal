@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Tue Jul 12 16:01:53 2022
+# Make data base, printed on Fri Jul 15 11:56:40 2022
 
 # Variables
 
@@ -16,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -29,10 +28,11 @@ WSLENV = ELECTRON_RUN_AS_NODE/w:
 CURDIR := /mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal
 # makefile
 SHELL = /bin/sh
+ 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin/code
+_ = /home/guilherme/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -46,20 +46,20 @@ VSCODE_CWD = /mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/guilherme/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Polyspace/R2021a/runtime/win64:/mnt/c/Program Files/Polyspace/R2021a/bin:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/pcb/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/fet/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/OpenAccess/bin/win32/opt:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/Capture:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/PSpice:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+PATH = /home/guilherme/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Polyspace/R2021a/runtime/win64:/mnt/c/Program Files/Polyspace/R2021a/bin:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/pcb/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/fet/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/OpenAccess/bin/win32/opt:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/Capture:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/PSpice:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a34ab8b9-71d0-4ce1-a47a-683485b69155.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5d861bf5-1058-4b2a-ac3e-c087f8847c46.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-# makefile (from 'makefile', line 7)
+# makefile (from 'makefile', line 8)
 TESTE_HORARIO_CPP_FILES = horario.cpp testeHorario.cpp excecoes.cpp
 # automatic
 %F = $(notdir $%)
-# makefile (from 'makefile', line 10)
+# makefile (from 'makefile', line 11)
 TESTE_HORARIO_CPP_OBJECTS = $(TESTE_HORARIO_CPP_FILES:.cpp=.o)
 # environment
 PWD = /mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal
@@ -76,7 +76,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = guilherme
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -88,19 +88,19 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = guilherme
 # makefile (from 'makefile', line 1)
-CORE_DEV_CPP_FILES = dataset.cpp datasetTemperatura.cpp datasetPorta.cpp dumbApiDebug.cpp excecoes.cpp main.cpp
+CORE_DEV_CPP_FILES = dataset.cpp datasetPorta.cpp dumbApiDebug.cpp excecoes.cpp horario.cpp main.cpp 
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from 'makefile', line 9)
+# makefile (from 'makefile', line 10)
 CORE_DEV_CPP_OBJECTS = $(CORE_DEV_CPP_FILES:.cpp=.o)
 # environment
-NAME = Code
+NAME = DESKTOP-9DJ5UHD
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -127,7 +127,7 @@ VSCODE_HANDLES_SIGPIPE = true
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'makefile', line 13)
+# makefile (from 'makefile', line 14)
 TESTE_HORARIO_BIN = teste_horario
 # environment
 LC_ALL = C
@@ -137,7 +137,7 @@ HOSTTYPE = x86_64
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from 'makefile', line 12)
+# makefile (from 'makefile', line 13)
 CORE_DEV_BIN = core_dev
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
@@ -149,10 +149,8 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=10/107=9%
+# Load=69/1024=7%, Rehash=0, Collisions=10/106=9%
 
 # Pattern-specific Variable Values
 
@@ -160,25 +158,25 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 47, inode 1407374883579431): 22 files, no impossibilities.
+# . (device 47, inode 1407374883579431): 31 files, no impossibilities.
 
-# 22 files, no impossibilities in 1 directories.
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.cpp
-#  recipe to execute (from 'makefile', line 16):
+#  recipe to execute (from 'makefile', line 17):
 	g++ -Wall -std=c++11 -c $<
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-core_dev: dataset.o datasetTemperatura.o datasetPorta.o dumbApiDebug.o excecoes.o main.o
+core_dev: dataset.o datasetPorta.o dumbApiDebug.o excecoes.o horario.o main.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 22):
+#  recipe to execute (from 'makefile', line 23):
 	g++ $(CORE_DEV_CPP_OBJECTS) -o $(CORE_DEV_BIN)
 
 all:
@@ -206,7 +204,7 @@ all:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/13=8%
-#  recipe to execute (from 'makefile', line 19):
+#  recipe to execute (from 'makefile', line 20):
 	make $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
 
 # Not a target:
@@ -230,18 +228,12 @@ testeHorario.o:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 16:01:26.6039231
+#  Last modified 2022-07-15 11:55:57.9971512
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 excecoes.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datasetTemperatura.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -262,14 +254,14 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 31):
+#  recipe to execute (from 'makefile', line 32):
 	rm -rf *.o $(CORE_DEV_CPP_OBJECTS) $(CORE_DEV_BIN) $(TESTE_HORARIO_CPP_OBJECTS) $(TESTE_HORARIO_BIN)
 
 teste_horario: horario.o testeHorario.o excecoes.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 25):
+#  recipe to execute (from 'makefile', line 26):
 	g++ $(TESTE_HORARIO_CPP_OBJECTS) -o $(TESTE_HORARIO_BIN)
 
 # Not a target:
@@ -285,26 +277,25 @@ main.o:
 #  File has not been updated.
 
 # Not a target:
- 
 dataset.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/36=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/35=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 40 / storage = 472 B / avg = 11 B
-# current buf: size = 8162 B / used = 472 B / count = 40 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 39 / storage = 451 B / avg = 11 B
+# current buf: size = 8162 B / used = 451 B / count = 39 / avg = 11 B
 
-# strcache performance: lookups = 51 / hit rate = 21%
+# strcache performance: lookups = 60 / hit rate = 35%
 # hash-table stats:
-# Load=40/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Tue Jul 12 16:01:53 2022
+# Load=39/8192=0%, Rehash=0, Collisions=1/60=2%
+# Finished Make data base on Fri Jul 15 11:56:40 2022
 
  

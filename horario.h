@@ -8,6 +8,8 @@ struct horario_t {
     friend ostream& operator<<(ostream&, horario_t&);
     public:
         horario_t(unsigned, unsigned, unsigned);
+        horario_t(unsigned);
+        horario_t();
 
         unsigned getHoras();
         unsigned getMinutos();
@@ -23,6 +25,10 @@ struct horario_t {
         horario_t operator-(horario_t&);
         
         void ajeitarHorario();  
+        void getHorarioAtual();
+    
+        unsigned horarioToTimestamp();
+        void timestampToHorario(unsigned);
     
     private:
         unsigned horas;

@@ -22,6 +22,14 @@ int main() {
     cout << "t2 - t1 = " << tempoDiferenca21 << endl;
     horario_t tempoDiferenca12 = tempo1 - tempo2;
     cout << "t1 - t2 = " << tempoDiferenca12 << endl;
+
+    horario_t tempoAtual;
+    cout << "Horario atual: " << tempoAtual << endl;
+    cout << "Timestamp: " << tempoAtual.horarioToTimestamp() << endl;
+
+    horario_t tempoTimestamp(67523);
+    cout << "Outro timestamp convertido: " << tempoTimestamp << endl;
+
     
     return 0;
 }

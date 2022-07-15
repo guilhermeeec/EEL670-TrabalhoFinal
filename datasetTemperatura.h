@@ -1,11 +1,12 @@
 #pragma once
 #include "dataset.h"
+#include "horario.h"
 
 using namespace std;
 
 struct temperatura_t {
     unsigned id;
-    unsigned hora;
+    horario_t hora;
     float medida;
 };
 
@@ -23,5 +24,5 @@ class DatasetTemperatura : public Dataset {
         
         float calcularMedia();
         void calcularMaxMin(float&, float&);
-        unsigned calcularIntervalo();
+        horario_t calcularIntervalo();
 };

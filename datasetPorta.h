@@ -1,11 +1,12 @@
 #pragma once
 #include "dataset.h"
+#include "horario.h"
 
 using namespace std;
 
 struct porta_t {
     unsigned id;
-    unsigned hora;
+    horario_t hora;
     bool aberta;
 };
 
@@ -22,6 +23,6 @@ class DatasetPorta : public Dataset {
     
     private:
         vector<porta_t> vetorDados;
-        unsigned calcularTempoAberta(); 
-        unsigned calcularIntervalo(); 
+        horario_t calcularTempoAberta(); 
+        horario_t calcularIntervalo(); 
 };

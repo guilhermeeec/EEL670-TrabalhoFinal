@@ -1,9 +1,10 @@
 CORE_DEV_CPP_FILES = dataset.cpp \
-					 datasetTemperatura.cpp \
 					 datasetPorta.cpp \
 					 dumbApiDebug.cpp \
 					 excecoes.cpp \
-					 main.cpp
+					 horario.cpp \
+					 main.cpp 
+#datasetTemperatura.cpp
 TESTE_HORARIO_CPP_FILES = horario.cpp testeHorario.cpp excecoes.cpp
 
 CORE_DEV_CPP_OBJECTS = $(CORE_DEV_CPP_FILES:.cpp=.o)

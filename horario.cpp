@@ -1,11 +1,21 @@
 #include "horario.h"
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
 horario_t::horario_t(unsigned horas, unsigned minutos, unsigned segundos) : 
 horas(horas), minutos(minutos), segundos(segundos) {
     ajeitarHorario();
+}
+
+horario_t::horario_t(unsigned timestamp) {
+    horas = minutos = segundos = 0;
+    timestampToHorario(timestamp);
+}
+
+horario_t::horario_t() {
+    getHorarioAtual();
 }
 
 unsigned horario_t::getHoras() { return horas; }
@@ -93,9 +103,28 @@ void horario_t::ajeitarHorario() {
     }
 }
 
+void horario_t::getHorarioAtual() {
+    time_t temporizador;
+    time(&temporizador);
+    struct tm * horario = localtime(&temporizador);
+
+    horas = (unsigned)horario->tm_hour;
+    minutos = (unsigned)horario->tm_min;
+    segundos = (unsigned)horario->tm_sec;
+}
+
+unsigned horario_t::horarioToTimestamp() {
+    return horas*3600 + minutos*60 + segundos; 
+}
+
+void horario_t::timestampToHorario(unsigned timestamp) {
+    segundos = timestamp;
+    ajeitarHorario();
+}
+
 ostream& operator<<(ostream& out, horario_t& horario) {
-    cout << horario.getHoras() << "h" 
-         << horario.getMinutos() << "m" 
-         << horario.getSegundos() << "s";
+    out << horario.getHoras() << "h"
+        << horario.getMinutos() << "m" 
+        << horario.getSegundos() << "s";
     return out;
 }

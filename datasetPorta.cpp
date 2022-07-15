@@ -8,24 +8,26 @@ Dataset(), vetorDados(0) { consultarDados(); }
 
 void DatasetPorta::consultarDados() {
 
-    // dadosRetornados: "0,10,True;1,13,False;2,16,False;3,18,True"
+    // dadosRetornados: "0,36000,True;1,46015,False;2,57900,False;3,67523,True"
     string dadosRetornados = queryDadosPorta();
 
-    // dados: ["0,10,True" "1,13,False" "2,16,False" "3,18,True"]
+    // dados: ["0,36000,True" "1,46015,False" "2,57900,False" "3,67523,True"]
     vector<string> dados = fatiarString(dadosRetornados, ";");
 
     for(string dado : dados) {
 
-        // campos: ["0" "10" "True"]
+        // campos: ["0" "36000" "True"]
         vector<string> campos = fatiarString(dado, ",");
 
         unsigned id = (unsigned)stoul(campos[0],nullptr);
-        unsigned hora = (unsigned)stoul(campos[1],nullptr);
+        unsigned timestamp = (unsigned)stoul(campos[1],nullptr);
         bool aberta = (campos[2] == "True" ? true : false);
+
+        horario_t horario(timestamp);
 
         porta_t amostra;
         amostra.id = id;
-        amostra.hora = hora;
+        amostra.hora = horario;
         amostra.aberta = aberta;
 
         vetorDados.push_back(amostra);
@@ -49,9 +51,9 @@ void DatasetPorta::exibirDados() {
 }
 
 void DatasetPorta::exibirEstatisticas() {
-    unsigned tempoAberta = this->calcularTempoAberta();
-    unsigned intervalo = calcularIntervalo();
-    unsigned tempoFechada = intervalo - tempoAberta;
+    horario_t tempoAberta = this->calcularTempoAberta();
+    horario_t intervalo = calcularIntervalo();
+    horario_t tempoFechada = intervalo - tempoAberta;
 
     cout << left << setw(25) << "Estatistica" << "Valor" << endl;
     cout << left << setw(25) << "Tempo aberta" << tempoAberta << endl;
@@ -63,8 +65,10 @@ void DatasetPorta::abrirFecharPorta() {
     bool abertaNoMomento = (vetorDados.end()-1)->aberta;
     unsigned ultimoId = (vetorDados.end()-1)->id;
 
+    horario_t horarioAtual;
+
     porta_t novoDado;
-    novoDado.hora = 10;
+    novoDado.hora = horarioAtual;
     novoDado.id = ultimoId+1;
     if(abertaNoMomento) {
         novoDado.aberta = false;
@@ -76,17 +80,17 @@ void DatasetPorta::abrirFecharPorta() {
     vetorDados.push_back(novoDado);
 
     string idString(to_string(novoDado.id));
-    string horaString(to_string(novoDado.hora));
+    string horaString(to_string(novoDado.hora.horarioToTimestamp()));
     string boolString = novoDado.aberta ? "True" : "False";
     string dado(idString + "," + horaString + "," + boolString);
 
     publicarDados(dado);
 }
 
-unsigned DatasetPorta::calcularTempoAberta() {
-    unsigned tempoInicial = 0;
-    unsigned tempoFinal = 0;
-    unsigned tempoAberta = 0;
+horario_t DatasetPorta::calcularTempoAberta() {
+    horario_t tempoInicial(0,0,0);
+    horario_t tempoFinal(0,0,0);
+    horario_t tempoAberta(0,0,0);
     bool ultimoEstado = false;
     for (porta_t amostra : vetorDados) {
 
@@ -99,31 +103,35 @@ unsigned DatasetPorta::calcularTempoAberta() {
         // Viu que a porta foi fechada -> registra o tempo inicial
         else if (amostra.aberta == false && ultimoEstado == true) {
             tempoFinal = amostra.hora;
-            tempoAberta += tempoFinal - tempoInicial;
+            horario_t tempoDecorrido(0,0,0);
+            tempoDecorrido = tempoFinal - tempoInicial;
+            tempoAberta = tempoAberta + tempoDecorrido;
             ultimoEstado = false;
         }
     }
 
     // Terminou aberta -> registra tempo final
-    if(ultimoEstado == true)
-        tempoAberta += (vetorDados.end()-1)->hora - tempoInicial;
+    if(ultimoEstado == true) {
+        horario_t tempoDecorrido(0,0,0);
+        tempoDecorrido = (vetorDados.end()-1)->hora - tempoInicial;
+        tempoAberta = tempoAberta + tempoDecorrido;
+    }
 
     return tempoAberta;
 }
 
-unsigned DatasetPorta::calcularIntervalo() {
+horario_t DatasetPorta::calcularIntervalo() {
     vector<porta_t>::iterator it_inicio = vetorDados.begin();
     porta_t primeiraAmostra = *it_inicio;
-    unsigned tempoInicial = primeiraAmostra.hora;
+    horario_t tempoInicial = primeiraAmostra.hora;
 
     vector<porta_t>::iterator it_fim = vetorDados.end()-1;
     porta_t ultimaAmostra = *it_fim;
-    unsigned tempoFinal = ultimaAmostra.hora;
+    horario_t tempoFinal = ultimaAmostra.hora;
 
-    unsigned deltaT;
+    horario_t deltaT;
     try {
         deltaT = tempoFinal - tempoInicial;
-        if(deltaT < 0) throw ExcecaoHorarioInconsistente();
     }
     catch (ExcecaoHorarioInconsistente& excecao) {
         cerr << excecao.what() << "Alerta para problemas no sincronismo do BD (intervalo estranho)" << endl;
