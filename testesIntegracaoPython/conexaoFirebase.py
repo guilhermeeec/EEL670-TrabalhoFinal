@@ -25,7 +25,9 @@ def getDadosColuna(coluna):
 
     print(filtered)
 
-    return filtered
+    toCpp = filtered.values
+
+    return str(toCpp)[1:-1]
 
 
 # Utilizado em teste02.cpp
