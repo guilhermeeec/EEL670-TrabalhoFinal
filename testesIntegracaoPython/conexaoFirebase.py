@@ -1,6 +1,9 @@
 import requests
 import pandas as pd
 
+
+# Funcao recebe o nome de uma coluna da base e retorna os 
+# valores contidos nesta.
 def getDadosColuna(coluna):
 
     # Realiza requisicao dos dados na web
@@ -17,9 +20,12 @@ def getDadosColuna(coluna):
     print(coluna)
     data = pd.read_json(reqResult.text)
 
-    print(data)
+    # Filtra os dados pela coluna desejada
+    filtered = data[coluna]
 
-    return 0
+    print(filtered)
+
+    return filtered
 
 
 # Utilizado em teste02.cpp

@@ -19,13 +19,14 @@ int main()
 	//pModule = PyImport_ImportModule(filename);
 	std::cout << "3" << std::endl;
 
-	// Objeto que representa a funcao chamada "nomeFuncao" do arquivo .py
+	// Objeto que representa a funcao chamada "getDadosColuna" do arquivo .py
 	char nomeFuncao[] = "getDadosColuna";
 	pFunc = PyObject_GetAttrString(pModule, nomeFuncao);
 	std::cout << "4" << std::endl;
 
-	// Objeto que representa um argumento chamado pArgs com o valor "Ola"
-	pArgs = PyTuple_Pack(1, PyUnicode_FromString((char*)"COLUNA1"));
+	// Objeto que representa um argumento chamado pArgs com o valor "temp"
+	// "temp" eh uma coluna da nossa base 
+	pArgs = PyTuple_Pack(1, PyUnicode_FromString((char*)"temp"));
 	std::cout << "5" << std::endl;
 
 	// Chama a funcao pFunc com os argumentos pArgs e retorna objeto pValue
