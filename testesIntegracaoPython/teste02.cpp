@@ -3,7 +3,7 @@
 
 int main()
 {
-	char filename[] = "pythonTeste.py";
+	char filename[] = "conexaoFirebase.py";
 	FILE* fp;
 
 	Py_Initialize();
