@@ -1,5 +1,5 @@
 #include "dataset.h"
-//#include "datasetTemperatura.h"
+#include "datasetTemperatura.h"
 #include "datasetPorta.h"
 
 void imprimeMenu() {
@@ -16,7 +16,7 @@ void imprimeMenu() {
 }
 
 int main() {
-    //DatasetTemperatura dadosTemperatura;
+    DatasetTemperatura dadosTemperatura;
     DatasetPorta dadosPorta;
 
     while(true) {
@@ -27,7 +27,7 @@ int main() {
         getline(std::cin, entradaUsuario);
         unsigned opcao = (unsigned)strtoul(entradaUsuario.c_str(), NULL, 10);
 
-        //dadosTemperatura.atualizarDados();
+        dadosTemperatura.atualizarDados();
         dadosPorta.atualizarDados();
         
         switch (opcao) {
@@ -36,11 +36,11 @@ int main() {
             break;
 
             case 1:
-            //cout << &dadosTemperatura << endl;
+            cout << &dadosTemperatura << endl;
             break;
 
             case 2:
-            //dadosTemperatura.exibirEstatisticas();
+            dadosTemperatura.exibirEstatisticas();
             break;
 
             case 3:

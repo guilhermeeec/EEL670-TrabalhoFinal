@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 15 11:56:40 2022
+# Make data base, printed on Sun Jul 17 19:03:53 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -28,11 +28,10 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 CURDIR := /mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal
 # makefile
 SHELL = /bin/sh
- 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/guilherme/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
+_ = /mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -50,7 +49,7 @@ PATH = /home/guilherme/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5d861bf5-1058-4b2a-ac3e-c087f8847c46.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-476812af-8a07-46eb-a286-4336d528c77c.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -76,7 +75,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = guilherme
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -88,7 +87,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -100,7 +99,7 @@ CORE_DEV_CPP_FILES = dataset.cpp datasetPorta.cpp dumbApiDebug.cpp excecoes.cpp 
 # makefile (from 'makefile', line 10)
 CORE_DEV_CPP_OBJECTS = $(CORE_DEV_CPP_FILES:.cpp=.o)
 # environment
-NAME = DESKTOP-9DJ5UHD
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -149,8 +148,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=10/106=9%
+# Load=70/1024=7%, Rehash=0, Collisions=10/107=9%
 
 # Pattern-specific Variable Values
 
@@ -158,9 +159,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 47, inode 1407374883579431): 31 files, no impossibilities.
+# . (device 47, inode 1407374883579431): 22 files, no impossibilities.
 
-# 31 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -277,6 +278,7 @@ main.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 dataset.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -293,9 +295,9 @@ dataset.o:
 # strcache buffers: 1 (0) / strings = 39 / storage = 451 B / avg = 11 B
 # current buf: size = 8162 B / used = 451 B / count = 39 / avg = 11 B
 
-# strcache performance: lookups = 60 / hit rate = 35%
+# strcache performance: lookups = 51 / hit rate = 23%
 # hash-table stats:
-# Load=39/8192=0%, Rehash=0, Collisions=1/60=2%
-# Finished Make data base on Fri Jul 15 11:56:40 2022
+# Load=39/8192=0%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Sun Jul 17 19:03:53 2022
 
  

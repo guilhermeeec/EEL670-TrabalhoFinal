@@ -11,24 +11,26 @@ Dataset(), vetorTemperaturas(0) { consultarDados(); }
 
 void DatasetTemperatura::consultarDados() {
 
-    // dadosRetornados: "0,10,29;1,13,32;2,16,21;3,18,27"
+    // dadosRetornados: "0,36000,29;1,46015,32;2,57900,21;3,67523,27"
     string dadosRetornados = queryDadosTemperatura();
 
-    // dados: ["0,10,29" "1,13,32" "2,16,21" "3,18,27"]
+    // dados: ["0,36000,29" "1,46015,32" "2,57900,21" "3,67523,27"]
     vector<string> dados = fatiarString(dadosRetornados, ";");
 
     for(string dado : dados) {
 
-        // campos: ["0" "10" "29"]
+        // campos: ["0" "36000" "29"]
         vector<string> campos = fatiarString(dado, ",");
 
         unsigned id = (unsigned)stoul(campos[0],nullptr);
-        unsigned hora = (unsigned)stoul(campos[1],nullptr);
+        unsigned timestamp = (unsigned)stoul(campos[1],nullptr);
         float medida = (float)stof(campos[2],nullptr);
+
+        horario_t horario(timestamp);
 
         temperatura_t amostra;
         amostra.id = id;
-        amostra.hora = hora;
+        amostra.hora = horario;
         amostra.medida = medida;
 
         vetorTemperaturas.push_back(amostra);
@@ -49,7 +51,7 @@ void DatasetTemperatura::exibirEstatisticas() {
     float media = this->calcularMedia();
     float maximo, minimo;
     this->calcularMaxMin(maximo, minimo);
-    unsigned intervalo = calcularIntervalo();
+    horario_t intervalo = calcularIntervalo();
 
     cout << left << setw(15) << "Estatistica" << "Valor" << endl;
     cout << left << setw(15) << "Media" << media << endl;
@@ -89,19 +91,18 @@ void DatasetTemperatura::calcularMaxMin(float& ref_maximo, float& ref_minimo) {
     }
 }
 
-unsigned DatasetTemperatura::calcularIntervalo() {
+horario_t DatasetTemperatura::calcularIntervalo() {
     vector<temperatura_t>::iterator it_inicio = vetorTemperaturas.begin();
     temperatura_t primeiraAmostra = *it_inicio;
-    unsigned tempoInicial = primeiraAmostra.hora;
+    horario_t tempoInicial = primeiraAmostra.hora;
 
     vector<temperatura_t>::iterator it_fim = vetorTemperaturas.end()-1;
     temperatura_t ultimaAmostra = *it_fim;
-    unsigned tempoFinal = ultimaAmostra.hora;
+    horario_t tempoFinal = ultimaAmostra.hora;
 
-    unsigned deltaT;
+    horario_t deltaT;
     try {
         deltaT = tempoFinal - tempoInicial;
-        if(tempoFinal < tempoInicial) throw ExcecaoHorarioInconsistente();
     }
     catch (ExcecaoHorarioInconsistente& excecao) {
         cerr << excecao.what() << "Alerta para problemas no sincronismo do BD (intervalo estranho)" << endl;
