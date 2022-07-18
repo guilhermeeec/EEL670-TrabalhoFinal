@@ -1,3 +1,14 @@
+
+######################################################################
+
+# Execute no terminal: python3-config --cflags --embed
+COMPILE_FLAGS_2 = -I/usr/include/python3.8 -I/usr/include/python3.8  -Wno-unused-result -Wsign-compare -g -fdebug-prefix-map=/build/python3.8-YxOiQL/python3.8-3.8.10=. -specs=/usr/share/dpkg/no-pie-compile.specs -fstack-protector -Wformat -Werror=format-security  -DNDEBUG -g -fwrapv -O3 -Wall
+
+# Execute no terminal: python3-config --embed --ldflags
+LINK_FLAGS = -L/usr/lib/python3.8/config-3.8-x86_64-linux-gnu -L/usr/lib -lpython3.8 -lcrypt -lpthread -ldl  -lutil -lm -lm
+
+######################################################################
+
 APP_CPP_FILES = dataset.cpp \
 				datasetPorta.cpp \
 				datasetTemperatura.cpp \
@@ -25,19 +36,19 @@ TESTE_CHAMADAS_PYTHON_BIN = teste_chamadas_python
 CORE_DEV_BIN = core_dev
 TESTE_HORARIO_BIN = teste_horario
 
-COMPILE_FLAGS = -std=c++11 -Wall -I/usr/include/python3.8/
+COMPILE_FLAGS_1 = -std=c++11 -Wall -I/usr/include/python3.8/
 
 %.o: %.cpp
-	g++ $(COMPILE_FLAGS) -c -fPIE $(python3-config --cflags --embed) $<
+	g++ $(COMPILE_FLAGS) -c -fPIE $(COMPILE_FLAGS_2)  $<
 
 all:
 	make $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
 
 $(APP_BIN): $(APP_CPP_OBJECTS)
-	g++ $(APP_CPP_OBJECTS) $(python3-config --embed --ldflags) -o $(APP_BIN)
+	g++ $(APP_CPP_OBJECTS) $(LINK_FLAGS) -o $(APP_BIN)
 	
 $(TESTE_CHAMADAS_PYTHON_BIN): $(TESTE_CHAMADAS_PYTHON_CPP_OBJECTS)
-	g++ $(TESTE_CHAMADAS_PYTHON_CPP_OBJECTS) $(python3-config --embed --ldflags) -o $(TESTE_CHAMADAS_PYTHON_BIN)
+	g++ $(TESTE_CHAMADAS_PYTHON_CPP_OBJECTS) $(LINK_FLAGS) -o $(TESTE_CHAMADAS_PYTHON_BIN)
 
 $(CORE_DEV_BIN): $(CORE_DEV_CPP_OBJECTS)
 	g++ $(CORE_DEV_CPP_OBJECTS) -o $(CORE_DEV_BIN)
