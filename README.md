@@ -1,2 +1,9 @@
 # EEL670-TrabalhoFinal
-Repositório com os códigos da disicplina de Linguagens de Programação.
+
+Requisitos: g++, Python3.8
+
+Execute os seguintes comandos para preparação do ambiente:
+
+sudo apt-get install python3.8-dev
+export PATH="$PATH:caminho/EEL670-TrabalhoFinal"
+export PYTHONPATH="$PYTHONPATH:caminhoEEL670-TrabalhoFinal"

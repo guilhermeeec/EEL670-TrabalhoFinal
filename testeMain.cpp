@@ -1,7 +1,6 @@
 #include "dataset.h"
 #include "datasetTemperatura.h"
 #include "datasetPorta.h"
-#include "chamadasPython.h"
 
 void imprimeMenu() {
     //system("cls");
@@ -17,8 +16,6 @@ void imprimeMenu() {
 }
 
 int main() {
-    setupApiPython();
-
     DatasetTemperatura dadosTemperatura;
     DatasetPorta dadosPorta;
 

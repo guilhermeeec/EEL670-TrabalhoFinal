@@ -2,13 +2,15 @@
 #include <iostream>
 #include "chamadasPython.h"
 
+void setupApiPython() {
+	Py_Initialize();
+	atexit(*Py_Finalize);
+}
 
 string queryDadosTemperatura() {
 
 	PyObject *pName, *pModule, *pFunc, *pArgs, *pValue;
 	std::cout << "1" << std::endl;
-	
-	atexit(*Py_Finalize);
 
 	// Objeto que representa o arquivo .py
 	char filename[] = "conexaoFirebase";
@@ -41,15 +43,11 @@ string queryDadosTemperatura() {
 	std::cout << result << std::endl;
 
 	return result;
-
 }
 
 string queryDadosPorta() {
 	PyObject *pName, *pModule, *pFunc, *pArgs, *pValue;
 	std::cout << "1" << std::endl;
-
-	
-	atexit(*Py_Finalize);
 
 	// Objeto que representa o arquivo .py
 	char filename[] = "conexaoFirebase";
@@ -81,27 +79,5 @@ string queryDadosPorta() {
 
 	std::cout << result << std::endl;
 
-
-
 	return result;
-
-}
-
-int main()
-{
-
-	Py_Initialize();
-
-	string dadosTemperatura = queryDadosTemperatura();
-
-	cout << dadosTemperatura << endl;
-
-	string dadosPorta = queryDadosPorta();
-
-	cout << dadosPorta << endl;
-	
-	Py_Finalize();
-
-	return 0;
-
 }
