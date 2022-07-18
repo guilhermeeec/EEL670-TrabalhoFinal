@@ -23,10 +23,10 @@ CORE_DEV_CPP_FILES = dataset.cpp \
 					 dumbApiDebug.cpp \
 					 excecoes.cpp \
 					 horario.cpp \
-					 coreDev.cpp 
+					 testeMain.cpp 
 TESTE_HORARIO_CPP_FILES = horario.cpp testeHorario.cpp excecoes.cpp
 
-APP_CPP_OBJECTS = $(CORE_DEV_CPP_OBJECTS:.cpp=.o)
+APP_CPP_OBJECTS = $(APP_CPP_OBJECTS:.cpp=.o)
 TESTE_CHAMADAS_PYTHON_CPP_OBJECTS = $(TESTE_CHAMADAS_PYTHON_CPP_FILES:.cpp=.o)
 CORE_DEV_CPP_OBJECTS = $(CORE_DEV_CPP_FILES:.cpp=.o)
 TESTE_HORARIO_CPP_OBJECTS = $(TESTE_HORARIO_CPP_FILES:.cpp=.o)
@@ -42,7 +42,7 @@ COMPILE_FLAGS_1 = -std=c++11 -Wall -I/usr/include/python3.8/
 	g++ $(COMPILE_FLAGS) -c -fPIE $(COMPILE_FLAGS_2)  $<
 
 all:
-	make $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
+	make $(APP_BIN) $(TESTE_CHAMADAS_PYTHON_BIN) $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
 
 $(APP_BIN): $(APP_CPP_OBJECTS)
 	g++ $(APP_CPP_OBJECTS) $(LINK_FLAGS) -o $(APP_BIN)

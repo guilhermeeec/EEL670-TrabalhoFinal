@@ -39,10 +39,10 @@ void DatasetTemperatura::consultarDados() {
 
 void DatasetTemperatura::exibirDados() {
     cout << left << setw(9) << "ID" 
-         << left << setw(9) << "Horario" 
-         << left << setw(9) << "Valor (graus C)" << endl;
+         << left << setw(15) << "Horario" 
+         << left << setw(15) << "Valor (graus C)" << endl;
     for (temperatura_t amostra : vetorTemperaturas) 
-        cout << left << setw(15) << amostra.id 
+        cout << left << setw(9) << amostra.id 
              << left << setw(15) << amostra.hora 
              << left << setw(15) << amostra.medida << endl;
 }
@@ -53,11 +53,11 @@ void DatasetTemperatura::exibirEstatisticas() {
     this->calcularMaxMin(maximo, minimo);
     horario_t intervalo = calcularIntervalo();
 
-    cout << left << setw(15) << "Estatistica" << "Valor" << endl;
-    cout << left << setw(15) << "Media" << media << endl;
-    cout << left << setw(15) << "Maximo" << maximo << endl;
-    cout << left << setw(15) << "Minimo" << minimo << endl;
-    cout << left << setw(15) << "Intervalo" << intervalo << endl;
+    cout << left << setw(25) << "Estatistica" << "Valor" << endl;
+    cout << left << setw(25) << "Media" << media << endl;
+    cout << left << setw(25) << "Maximo" << maximo << endl;
+    cout << left << setw(25) << "Minimo" << minimo << endl;
+    cout << left << setw(25) << "Intervalo" << intervalo << endl;
 } 
 
 float DatasetTemperatura::calcularMedia() {

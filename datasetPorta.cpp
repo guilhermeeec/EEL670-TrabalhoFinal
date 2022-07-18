@@ -40,11 +40,11 @@ void DatasetPorta::publicarDados(string dado) {
 
 void DatasetPorta::exibirDados() {
     cout << left << setw(9) << "ID" 
-         << left << setw(9) << "Horario" 
-         << left << setw(9) << "Estado" << endl;
+         << left << setw(15) << "Horario" 
+         << left << setw(15) << "Estado" << endl;
     for (porta_t amostra : vetorDados) {
         string textoEstado =  (amostra.aberta ? "Aberta" : "Fechada");
-        cout << left << setw(15) << amostra.id 
+        cout << left << setw(9) << amostra.id 
              << left << setw(15) << amostra.hora 
              << left << setw(15) << textoEstado << endl;
     }

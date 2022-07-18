@@ -1,5 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal'
-make core_dev teste_horario
 make: Leaving directory '/mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal'
  
+makefile:29: *** Recursive variable 'APP_CPP_OBJECTS' references itself (eventually).  Stop.
+
