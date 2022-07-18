@@ -1,0 +1,10 @@
++ Antes de rodar
+
+sudo apt-get install python3.8-dev
+export PATH="$PATH:caminho/EEL670-TrabalhoFinal"
+export PYTHONPATH="$PYTHONPATH:caminhoEEL670-TrabalhoFinal"
+
++ Para construir o codigo:
+
+g++ -std=c++11 -Wall -I/usr/include/python3.8/ -c teste03.cpp -fPIE $(python3-config --cflags --embed) -o teste03.o
+g++ teste03.o $(python3-config --embed --ldflags) -o teste03
