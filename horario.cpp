@@ -123,8 +123,8 @@ void horario_t::timestampToHorario(unsigned timestamp) {
 }
 
 ostream& operator<<(ostream& out, horario_t& horario) {
-    out << horario.getHoras() << "h"
-        << horario.getMinutos() << "m" 
-        << horario.getSegundos() << "s";
+    char textoHorario[10];
+    sprintf(textoHorario, "%uh%um%us", horario.getHoras(), horario.getMinutos(), horario.getSegundos());
+    out << textoHorario;
     return out;
 }

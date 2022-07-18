@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 17 19:03:53 2022
+# Make data base, printed on Mon Jul 18 08:18:27 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ PATH = /home/guilherme/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-476812af-8a07-46eb-a286-4336d528c77c.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bea581b6-3904-4987-a1ab-646dd0b2b117.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -75,7 +75,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = guilherme
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -93,7 +93,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = guilherme
 # makefile (from 'makefile', line 1)
-CORE_DEV_CPP_FILES = dataset.cpp datasetPorta.cpp dumbApiDebug.cpp excecoes.cpp horario.cpp main.cpp 
+CORE_DEV_CPP_FILES = dataset.cpp datasetPorta.cpp datasetTemperatura.cpp dumbApiDebug.cpp excecoes.cpp horario.cpp main.cpp 
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from 'makefile', line 10)
@@ -173,7 +173,7 @@ MOTD_SHOWN = update-motd
 
 # Files
 
-core_dev: dataset.o datasetPorta.o dumbApiDebug.o excecoes.o horario.o main.o
+core_dev: dataset.o datasetPorta.o datasetTemperatura.o dumbApiDebug.o excecoes.o horario.o main.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -229,12 +229,18 @@ testeHorario.o:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 11:55:57.9971512
+#  Last modified 2022-07-17 19:11:20.4226732
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 excecoes.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datasetTemperatura.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -272,32 +278,32 @@ dumbApiDebug.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 main.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
- 
 dataset.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/35=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 39 / storage = 451 B / avg = 11 B
-# current buf: size = 8162 B / used = 451 B / count = 39 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 40 / storage = 472 B / avg = 11 B
+# current buf: size = 8162 B / used = 472 B / count = 40 / avg = 11 B
 
-# strcache performance: lookups = 51 / hit rate = 23%
+# strcache performance: lookups = 52 / hit rate = 23%
 # hash-table stats:
-# Load=39/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Sun Jul 17 19:03:53 2022
+# Load=40/8192=0%, Rehash=0, Collisions=1/52=2%
+# Finished Make data base on Mon Jul 18 08:18:27 2022
 
  

@@ -42,9 +42,9 @@ void DatasetTemperatura::exibirDados() {
          << left << setw(9) << "Horario" 
          << left << setw(9) << "Valor (graus C)" << endl;
     for (temperatura_t amostra : vetorTemperaturas) 
-        cout << left << setw(9) << amostra.id 
-             << left << setw(9) << amostra.hora 
-             << left << setw(9) << amostra.medida << endl;
+        cout << left << setw(15) << amostra.id 
+             << left << setw(15) << amostra.hora 
+             << left << setw(15) << amostra.medida << endl;
 }
 
 void DatasetTemperatura::exibirEstatisticas() {
@@ -109,4 +109,4 @@ horario_t DatasetTemperatura::calcularIntervalo() {
     }
 
     return deltaT;
-}
+} 

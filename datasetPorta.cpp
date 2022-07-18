@@ -44,9 +44,9 @@ void DatasetPorta::exibirDados() {
          << left << setw(9) << "Estado" << endl;
     for (porta_t amostra : vetorDados) {
         string textoEstado =  (amostra.aberta ? "Aberta" : "Fechada");
-        cout << left << setw(9) << amostra.id 
-             << left << setw(9) << amostra.hora 
-             << left << setw(9) << textoEstado << endl;
+        cout << left << setw(15) << amostra.id 
+             << left << setw(15) << amostra.hora 
+             << left << setw(15) << textoEstado << endl;
     }
 }
 
