@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal'
+make core_dev teste_horario
+make: Leaving directory '/mnt/d/BKP - 2021/subsi/Desktop/Faculdade/Linguagens de Programação/praticas/EEL670-TrabalhoFinal'
+ 
