@@ -27,7 +27,7 @@ def getDadosColuna(coluna):
 
     toCpp = filtered.values
 
-    return str(toCpp)[1:-1]
+    return str(toCpp)[1:-1].replace(" ", ";")
 
 
 # Utilizado em teste02.cpp
