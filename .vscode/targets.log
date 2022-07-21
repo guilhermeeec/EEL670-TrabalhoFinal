@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-makefile:29: *** Recursive variable 'APP_CPP_OBJECTS' references itself (eventually).  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ makefile:29: *** Recursive variable 'APP_CPP_OBJECTS' references itself (eventua
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 18 12:17:06 2022
+# Make data base, printed on Thu Jul 21 15:24:22 2022
 
 # Variables
 
@@ -36,7 +34,7 @@ VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 _ = /mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
@@ -47,11 +45,11 @@ VSCODE_CWD = /mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Polyspace/R2021a/runtime/win64:/mnt/c/Program Files/Polyspace/R2021a/bin:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/pcb/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/fet/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/OpenAccess/bin/win32/opt:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/Capture:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/PSpice:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+PATH = /home/guilherme/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/home/guilherme/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Polyspace/R2021a/runtime/win64:/mnt/c/Program Files/Polyspace/R2021a/bin:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/pcb/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/fet/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/OpenAccess/bin/win32/opt:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/bin:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/Capture:/mnt/c/OrCAD/OrCAD_16.6_Lite/tools/PSpice:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310:/mnt/c/Users/User/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bea581b6-3904-4987-a1ab-646dd0b2b117.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-763f1690-e034-416b-b759-0ed4f42a58df.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -81,7 +79,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = guilherme
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -165,13 +163,13 @@ LANG = C
 # environment
 TERM = xterm-256color
 # makefile (from 'makefile', line 29)
-APP_CPP_OBJECTS = $(APP_CPP_OBJECTS:.cpp=.o)
+APP_CPP_OBJECTS = $(APP_CPP_FILES:.cpp=.o)
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # environment
 MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=79/1024=8%, Rehash=0, Collisions=6/96=6%
+# Load=79/1024=8%, Rehash=0, Collisions=10/123=8%
 
 # Pattern-specific Variable Values
 
@@ -193,16 +191,101 @@ MOTD_SHOWN = update-motd
 
 # Files
 
-all:
-#  Command line target.
+core_dev: dataset.o datasetPorta.o datasetTemperatura.o dumbApiDebug.o excecoes.o horario.o testeMain.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'makefile', line 54):
+	g++ $(CORE_DEV_CPP_OBJECTS) -o $(CORE_DEV_BIN)
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
 #  recipe to execute (from 'makefile', line 45):
 	make $(APP_BIN) $(TESTE_CHAMADAS_PYTHON_BIN) $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
 
 # Not a target:
+horario.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+testeHorario.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+teste_chamadas_python: chamadasPython.o testeChamadasPython.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 51):
+	g++ $(TESTE_CHAMADAS_PYTHON_CPP_OBJECTS) $(LINK_FLAGS) -o $(TESTE_CHAMADAS_PYTHON_BIN)
+
+app: dataset.o datasetPorta.o datasetTemperatura.o chamadasPython.o excecoes.o horario.o main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 48):
+	g++ $(APP_CPP_OBJECTS) $(LINK_FLAGS) -o $(APP_BIN)
+	
+
+# Not a target:
 makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-20 15:28:41.5926116
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+testeChamadasPython.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+excecoes.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datasetTemperatura.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datasetPorta.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -213,20 +296,65 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+testeMain.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 60):
+	rm -rf *.o $(APP_CPP_OBJECTS) $(TESTE_CHAMADAS_PYTHON_CPP_OBJECTS) $(CORE_DEV_CPP_OBJECTS) $(TESTE_HORARIO_CPP_OBJECTS)
+	rm -rf *.o $(APP_BIN) $(TESTE_CHAMADAS_PYTHON_BIN) $(CORE_DEV_BIN) $(TESTE_HORARIO_BIN)
+
+teste_horario: horario.o testeHorario.o excecoes.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 57):
+	g++ $(TESTE_HORARIO_CPP_OBJECTS) -o $(TESTE_HORARIO_BIN)
+
+# Not a target:
+chamadasPython.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dumbApiDebug.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dataset.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/6=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/51=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 35 / storage = 436 B / avg = 12 B
-# current buf: size = 8162 B / used = 436 B / count = 35 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 642 B / avg = 12 B
+# current buf: size = 8162 B / used = 642 B / count = 50 / avg = 12 B
 
-# strcache performance: lookups = 41 / hit rate = 14%
+# strcache performance: lookups = 70 / hit rate = 28%
 # hash-table stats:
-# Load=35/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Mon Jul 18 12:17:06 2022
+# Load=50/8192=1%, Rehash=0, Collisions=1/70=1%
+# Finished Make data base on Thu Jul 21 15:24:22 2022
 
  

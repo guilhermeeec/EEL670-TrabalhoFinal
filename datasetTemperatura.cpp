@@ -1,6 +1,7 @@
 #include "datasetTemperatura.h"
 #include "excecoes.h"
 #include "dumbApiDebug.h"
+#include "chamadasPython.h"
 #include <iomanip>
 
 #define ZERO_ABSOLUTO   -273 

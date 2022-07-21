@@ -6,6 +6,7 @@ import pandas as pd
 def getDados(coluna):
 
     # Realiza requisicao dos dados na web
+    print("Requisitando dados em: https://trab-lingprog-default-rtdb.firebaseio.com/Dados.json ...")
     reqResult = requests.get('https://trab-lingprog-default-rtdb.firebaseio.com/Dados.json')
 
     # Checa se a requisicao foi completada com sucesso (status code 200).

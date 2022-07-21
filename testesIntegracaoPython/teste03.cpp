@@ -16,6 +16,7 @@ int main()
 
 	// Objeto que representa o modulo em Python
 	pModule = PyImport_Import(pName); // erro aqui na importacao
+	if(pModule) printf("foi\n");
 	//pModule = PyImport_ImportModule(filename);
 	std::cout << "3" << std::endl;
 

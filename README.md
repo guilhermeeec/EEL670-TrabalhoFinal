@@ -6,10 +6,11 @@ Execute os seguintes comandos para preparação do ambiente:
 
 sudo apt-get install python3.8-dev
 pip install pandas
-export PATH="$PATH:[caminho/EEL670-TrabalhoFinal]"
-export PYTHONPATH="$PYTHONPATH:[caminhoEEL670-TrabalhoFinal]"
 
-Substitua [caminhoEEL670-TrabalhoFinal] pelo path deste repositorio na máquina.
+Toda vez que for reiniciar o ambiente, execute:
+
+export PATH="$PATH:$(pwd)"
+export PYTHONPATH="$PYTHONPATH:$(pwd)"
 
 Para configurar o makefile, execute os seguintes comandos:
 

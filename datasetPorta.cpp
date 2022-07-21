@@ -1,6 +1,7 @@
 #include "datasetPorta.h"
 #include "excecoes.h"
 #include "dumbApiDebug.h"
+#include "chamadasPython.h"
 #include <iomanip>
 
 DatasetPorta::DatasetPorta() :
