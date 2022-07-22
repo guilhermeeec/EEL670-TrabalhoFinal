@@ -65,12 +65,20 @@ void DatasetPorta::exibirEstatisticas() {
 void DatasetPorta::abrirFecharPorta() {
     bool abertaNoMomento = (vetorDados.end()-1)->aberta;
     unsigned ultimoId = (vetorDados.end()-1)->id;
+    horario_t ultimoHorario = (vetorDados.end()-1)->hora;
 
     horario_t horarioAtual;
 
     porta_t novoDado;
-    novoDado.hora = horarioAtual;
+    if(ultimoHorario > horarioAtual) {
+        cout << "O ultimo dado foi inserido em uma hora anterior.\n"
+             << "Ajustando o horario do novo dado para manter ordem." << endl;
+        novoDado.hora = ultimoHorario;
+    } else
+        novoDado.hora = horarioAtual;
+    
     novoDado.id = ultimoId+1;
+    
     if(abertaNoMomento) {
         novoDado.aberta = false;
         cout << "Porta fechada" << endl;
