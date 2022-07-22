@@ -62,16 +62,27 @@ void DatasetTemperatura::exibirEstatisticas() {
 } 
 
 float DatasetTemperatura::calcularMedia() {
-    float soma = 0;;
+    float soma = vetorTemperaturas[0].medida;
     float media = 0;
-    for(temperatura_t amostra : vetorTemperaturas)
-        soma += amostra.medida;
+    if(vetorTemperaturas.size() == 1)
+        return soma;
+
+    // Calcula a media da variavel implementando uma integracao por trapezios
+    for(unsigned indice=1; indice<vetorTemperaturas.size(); indice++){
+        temperatura_t temperaturaAtual = vetorTemperaturas[indice];
+        temperatura_t temperaturaAnterior = vetorTemperaturas[indice-1];
+        horario_t diferenca = temperaturaAtual.hora - temperaturaAnterior.hora;
+        unsigned deltaT = diferenca.horarioToTimestamp();
+        soma += deltaT * (temperaturaAtual.medida + temperaturaAtual.medida) / 2;
+    }
+
+    unsigned diferencaTotal = calcularIntervalo().horarioToTimestamp();
 
     try {
         if (vetorTemperaturas.size() == 0)
             throw ExcecaoDivisaoPorZero();
         else
-            media = soma/vetorTemperaturas.size();
+            media = soma/diferencaTotal;
     }
     catch (ExcecaoDivisaoPorZero& excecao) {
         cerr << excecao.what() << "Nenhum dado coletado (media incorreta)" << endl;

@@ -90,6 +90,16 @@ bool horario_t::operator==(horario_t& segundoHorario) {
     return !(this->operator>(segundoHorario)) && !(this->operator<(segundoHorario));
 } 
 
+void horario_t::getHorarioAtual() {
+    time_t temporizador;
+    time(&temporizador);
+    struct tm * horario = localtime(&temporizador);
+
+    horas = (unsigned)horario->tm_hour;
+    minutos = (unsigned)horario->tm_min;
+    segundos = (unsigned)horario->tm_sec;
+}
+
 void horario_t::ajeitarHorario() {
     if(segundos > 60) {
         unsigned minutosAAcrecentar = (segundos - (segundos % 60)) / 60;
@@ -101,16 +111,6 @@ void horario_t::ajeitarHorario() {
         horas += horasAAcrecentar;
         minutos -= horasAAcrecentar * 60;
     }
-}
-
-void horario_t::getHorarioAtual() {
-    time_t temporizador;
-    time(&temporizador);
-    struct tm * horario = localtime(&temporizador);
-
-    horas = (unsigned)horario->tm_hour;
-    minutos = (unsigned)horario->tm_min;
-    segundos = (unsigned)horario->tm_sec;
 }
 
 unsigned horario_t::horarioToTimestamp() {

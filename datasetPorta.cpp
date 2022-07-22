@@ -89,9 +89,9 @@ void DatasetPorta::abrirFecharPorta() {
 }
 
 horario_t DatasetPorta::calcularTempoAberta() {
-    horario_t tempoInicial(0,0,0);
-    horario_t tempoFinal(0,0,0);
-    horario_t tempoAberta(0,0,0);
+    horario_t tempoInicial(0);
+    horario_t tempoFinal(0);
+    horario_t tempoAberta(0);
     bool ultimoEstado = false;
     for (porta_t amostra : vetorDados) {
 
@@ -104,7 +104,7 @@ horario_t DatasetPorta::calcularTempoAberta() {
         // Viu que a porta foi fechada -> registra o tempo inicial
         else if (amostra.aberta == false && ultimoEstado == true) {
             tempoFinal = amostra.hora;
-            horario_t tempoDecorrido(0,0,0);
+            horario_t tempoDecorrido(0);
             tempoDecorrido = tempoFinal - tempoInicial;
             tempoAberta = tempoAberta + tempoDecorrido;
             ultimoEstado = false;
@@ -113,7 +113,7 @@ horario_t DatasetPorta::calcularTempoAberta() {
 
     // Terminou aberta -> registra tempo final
     if(ultimoEstado == true) {
-        horario_t tempoDecorrido(0,0,0);
+        horario_t tempoDecorrido(0);
         tempoDecorrido = (vetorDados.end()-1)->hora - tempoInicial;
         tempoAberta = tempoAberta + tempoDecorrido;
     }

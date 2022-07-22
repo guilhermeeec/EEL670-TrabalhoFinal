@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 15:24:22 2022
+# Make data base, printed on Fri Jul 22 10:39:06 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ PATH = /home/guilherme/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-763f1690-e034-416b-b759-0ed4f42a58df.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-17dd9fda-c9c2-40fd-a6e0-146eb4819602.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -275,6 +275,7 @@ testeChamadasPython.o:
 # Not a target:
 excecoes.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -355,6 +356,6 @@ dataset.o:
 # strcache performance: lookups = 70 / hit rate = 28%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/70=1%
-# Finished Make data base on Thu Jul 21 15:24:22 2022
+# Finished Make data base on Fri Jul 22 10:39:06 2022
 
  
