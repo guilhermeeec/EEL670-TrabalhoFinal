@@ -30,6 +30,7 @@ int main() {
         getline(std::cin, entradaUsuario);
         unsigned opcao = (unsigned)strtoul(entradaUsuario.c_str(), NULL, 10);
 
+        cout << "Sincronizando..." << endl;
         dadosTemperatura.atualizarDados();
         dadosPorta.atualizarDados();
         

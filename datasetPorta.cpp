@@ -65,12 +65,20 @@ void DatasetPorta::exibirEstatisticas() {
 void DatasetPorta::abrirFecharPorta() {
     bool abertaNoMomento = (vetorDados.end()-1)->aberta;
     unsigned ultimoId = (vetorDados.end()-1)->id;
+    horario_t ultimoHorario = (vetorDados.end()-1)->hora;
 
     horario_t horarioAtual;
 
     porta_t novoDado;
-    novoDado.hora = horarioAtual;
+    if(ultimoHorario > horarioAtual) {
+        cout << "O ultimo dado foi inserido em uma hora anterior.\n"
+             << "Ajustando o horario do novo dado para manter ordem." << endl;
+        novoDado.hora = ultimoHorario;
+    } else
+        novoDado.hora = horarioAtual;
+    
     novoDado.id = ultimoId+1;
+    
     if(abertaNoMomento) {
         novoDado.aberta = false;
         cout << "Porta fechada" << endl;
@@ -89,9 +97,9 @@ void DatasetPorta::abrirFecharPorta() {
 }
 
 horario_t DatasetPorta::calcularTempoAberta() {
-    horario_t tempoInicial(0,0,0);
-    horario_t tempoFinal(0,0,0);
-    horario_t tempoAberta(0,0,0);
+    horario_t tempoInicial(0);
+    horario_t tempoFinal(0);
+    horario_t tempoAberta(0);
     bool ultimoEstado = false;
     for (porta_t amostra : vetorDados) {
 
@@ -104,7 +112,7 @@ horario_t DatasetPorta::calcularTempoAberta() {
         // Viu que a porta foi fechada -> registra o tempo inicial
         else if (amostra.aberta == false && ultimoEstado == true) {
             tempoFinal = amostra.hora;
-            horario_t tempoDecorrido(0,0,0);
+            horario_t tempoDecorrido(0);
             tempoDecorrido = tempoFinal - tempoInicial;
             tempoAberta = tempoAberta + tempoDecorrido;
             ultimoEstado = false;
@@ -113,7 +121,7 @@ horario_t DatasetPorta::calcularTempoAberta() {
 
     // Terminou aberta -> registra tempo final
     if(ultimoEstado == true) {
-        horario_t tempoDecorrido(0,0,0);
+        horario_t tempoDecorrido(0);
         tempoDecorrido = (vetorDados.end()-1)->hora - tempoInicial;
         tempoAberta = tempoAberta + tempoDecorrido;
     }
