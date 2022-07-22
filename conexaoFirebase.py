@@ -27,7 +27,7 @@ def getDados(coluna):
 
     return str(toCpp)
 
-def getDadosTemp():
+def getDadosTemp(coluna):
 
     req= requests.get("https://trab-lingprog-default-rtdb.firebaseio.com/Temperatura.json")
 
@@ -65,7 +65,7 @@ def getDadosTemp():
 
     return result
 
-def getDadosPorta():
+def getDadosPorta(coluna):
 
     req= requests.get("https://trab-lingprog-default-rtdb.firebaseio.com/StatusPorta.json")
 
@@ -103,9 +103,9 @@ def getDadosPorta():
     
     return result
 
-
-getDadosTemp()
-getDadosPorta()
+if __name__ == "__main__":
+    getDadosTemp("")
+    getDadosPorta("")
 
 
 
