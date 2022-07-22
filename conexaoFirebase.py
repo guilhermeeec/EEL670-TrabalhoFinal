@@ -17,11 +17,11 @@ def getDados(coluna):
     else:
         print("Requisicao realizada com sucesso.")
 
-    print(coluna)
+    #print(coluna)
     
     data = pd.read_json(reqResult.text)
 
-    print(data.to_csv())
+    #print(data.to_csv())
 
     toCpp = data.to_csv()
 
@@ -43,25 +43,25 @@ def getDadosColuna(coluna):
     else:
         print("Requisicao realizada com sucesso.")
 
-    print(coluna)
     data = pd.read_json(reqResult.text)
+    data["id"] = data.index
 
-    # Filtra os dados pela coluna desejada
-    filtered = data[coluna]
+    id = data["id"].values
+    hora = data["hora"].values
+    colunaDados = data[coluna].values
 
-    print(filtered)
-
-    toCpp = filtered.values
-
-    if (coluna == "porta"):
+    result = "" 
+    for index in range(len(data)):
         
-        print(toCpp)
-
-        result = str(toCpp)[1:-1].replace("  ", ",")
-        result = result.replace(" ", "")
-  
-    else:
-        result = str(toCpp)[1:-1].replace(" ", ",")
+        strParcial = str(id[index])+","+ str(hora[index])+","+ str(colunaDados[index])
+       
+        if (index==0):
+            result = strParcial
+        else:
+        
+            resultTemp = result
+            strParcial = str(id[index])+","+ str(hora[index])+","+ str(colunaDados[index])
+            result = resultTemp + ";" + strParcial
 
     return result
 
