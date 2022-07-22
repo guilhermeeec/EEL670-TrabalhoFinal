@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#define DADOS_TEMPERATURA_EXEMPLO   "0,4507,29;1,7200,32;2,12235,21;3,12491,27"
-#define DADOS_PORTA_EXEMPLO         "0,4507,True;1,7200,False;2,12235,False;3,12491,True"
+#define DADOS_TEMPERATURA_EXEMPLO   "0,36000,29;1,46015,32;2,57900,21;3,67523,27"
+#define DADOS_PORTA_EXEMPLO         "0,36000,True;1,46015,False;2,57900,False;3,67523,True"
 
 string queryDadosTemperatura();
 string queryDadosPorta();

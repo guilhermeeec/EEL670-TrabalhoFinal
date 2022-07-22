@@ -38,6 +38,12 @@ void DatasetTemperatura::consultarDados() {
     }
 }
 
+void DatasetTemperatura::atualizarDados() {
+    vetorDados.clear();
+    vetorTemperaturas.clear();
+    consultarDados();
+}
+
 void DatasetTemperatura::exibirDados() {
     cout << left << setw(9) << "ID" 
          << left << setw(15) << "Horario" 

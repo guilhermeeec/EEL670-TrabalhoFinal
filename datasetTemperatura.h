@@ -15,6 +15,7 @@ class DatasetTemperatura : public Dataset {
         DatasetTemperatura();
 
         void consultarDados();
+        void atualizarDados();
         virtual void exibirDados();
         void exibirEstatisticas(); 
     

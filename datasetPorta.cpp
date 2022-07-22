@@ -35,6 +35,11 @@ void DatasetPorta::consultarDados() {
     }
 }
 
+void DatasetPorta::atualizarDados() {
+    vetorDados.clear();
+    consultarDados();
+}
+
 void DatasetPorta::publicarDados(string dado) {
     insertDadosPorta(dado);
 }

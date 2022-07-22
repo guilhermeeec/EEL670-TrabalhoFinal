@@ -15,6 +15,7 @@ class DatasetPorta : public Dataset {
         DatasetPorta();
 
         void consultarDados();
+        void atualizarDados();
         void publicarDados(string);
         virtual void exibirDados();
         void exibirEstatisticas(); 
