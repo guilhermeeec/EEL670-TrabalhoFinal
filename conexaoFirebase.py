@@ -15,7 +15,8 @@ def getDados(coluna):
         print("Erro de requisicao.")
         exit(1)
     else:
-        print("Requisicao realizada com sucesso.")
+        pass
+        #print("Requisicao realizada com sucesso.")
 
     #print(coluna)
     
@@ -44,8 +45,8 @@ def getDadosTemp(coluna):
     timestamp = data["timestamp"].values
     temp = data["temperatura"].values
 
-    print(timestamp)
-    print(temp)
+    #print(timestamp)
+    #print(temp)
 
     result = ""
 
@@ -61,7 +62,7 @@ def getDadosTemp(coluna):
             strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(temp[index])
             result = resultTemp + ";" + strParcial
 
-    print(result)
+    #print(result)
 
     return result
 
@@ -73,7 +74,8 @@ def getDadosPorta(coluna):
         print("Erro de requisicao.")
         exit(1)
     else:
-        print("Requisicao realizada com sucesso.")
+        pass
+        #print("Requisicao realizada com sucesso.")
 
     data = pd.read_json(req.text)
     data["id"] = data.index
@@ -82,8 +84,8 @@ def getDadosPorta(coluna):
     timestamp = data["timestamp"].values
     porta = data["aberta"].values
 
-    print(timestamp)
-    print(porta)
+    #print(timestamp)
+    #print(porta)
 
     result = ""
 
@@ -99,7 +101,7 @@ def getDadosPorta(coluna):
             strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(porta[index])
             result = resultTemp + ";" + strParcial
 
-    print(result)
+    #print(result)
     
     return result
 
