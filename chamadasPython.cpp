@@ -24,7 +24,7 @@ string queryDadosTemperatura() {
 	if(pModule) {cout << "funfou" << endl;}
 
 	// Objeto que representa a funcao chamada "getDadosColuna" do arquivo .py
-	char nomeFuncao[] = "getDadosColuna";
+	char nomeFuncao[] = "getDadosTemp";
 	pFunc = PyObject_GetAttrString(pModule, nomeFuncao);
 	std::cout << "4" << std::endl;
 
@@ -61,7 +61,7 @@ string queryDadosPorta() {
 	std::cout << "3" << std::endl;
 
 	// Objeto que representa a funcao chamada "getDadosColuna" do arquivo .py
-	char nomeFuncao[] = "getDadosColuna";
+	char nomeFuncao[] = "getDadosPorta";
 	pFunc = PyObject_GetAttrString(pModule, nomeFuncao);
 	std::cout << "4" << std::endl;
 
