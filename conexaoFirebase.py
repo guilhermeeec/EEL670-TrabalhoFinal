@@ -138,12 +138,14 @@ def insertDadosPorta(registro):
 
         for reg in matrizRegs:
 
-                print("REGISTRO")
-                print(reg)
+                print(f"id {reg[0]}")
+                print(f"timestamp: {reg[1]}")
+                print(f"aberta: {reg[2]}\n")
+
                
                 # /StatusPorta/<chave primaria 0, 1, 2>/<timestamp, aberta>
                 ref.child(reg[0]).child("timestamp").set(int(reg[1]))
-                ref.child(reg[0]).child("aberta").set(bool(reg[2]))       
+                ref.child(reg[0]).child("aberta").set(True if  reg[2].lower() == "true" else False)     
         
         return 0
 
