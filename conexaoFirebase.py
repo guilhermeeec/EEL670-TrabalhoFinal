@@ -152,5 +152,4 @@ def insertDadosPorta(registro):
 if __name__ == "__main__":
     getDadosTemp("")
     getDadosPorta("")
-    insertDadosTemp("")
-    insertDadosPorta("")
+    insertDadosPorta("9,67523,True")
