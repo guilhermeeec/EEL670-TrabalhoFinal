@@ -99,6 +99,7 @@ void DatasetPorta::abrirFecharPorta() {
     string dado(idString + "," + horaString + "," + boolString);
 
     publicarDados(dado);
+    cout << "Publicacao realizada com sucesso." << endl;
 }
 
 horario_t DatasetPorta::calcularTempoAberta() {

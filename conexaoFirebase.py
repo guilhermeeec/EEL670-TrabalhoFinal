@@ -138,9 +138,9 @@ def insertDadosPorta(registro):
 
         for reg in matrizRegs:
 
-                print(f"id {reg[0]}")
-                print(f"timestamp: {reg[1]}")
-                print(f"aberta: {reg[2]}\n")
+                #print(f"id {reg[0]}")
+                #print(f"timestamp: {reg[1]}")
+                #print(f"aberta: {reg[2]}\n")
 
                
                 # /StatusPorta/<chave primaria 0, 1, 2>/<timestamp, aberta>
@@ -152,4 +152,4 @@ def insertDadosPorta(registro):
 if __name__ == "__main__":
     getDadosTemp("")
     getDadosPorta("")
-    insertDadosPorta("9,67523,True")
+    insertDadosPorta("0,1800,True")

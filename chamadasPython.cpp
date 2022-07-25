@@ -135,12 +135,12 @@ int insertDadosPorta(string dadoNovo) {
 	// PyErr_Print();
 
 	// Transforma em string do C++
-	auto result = _PyUnicode_AsString(pValue);
+	//auto result = _PyUnicode_AsString(pValue);
 	// std::cout << "7" << std::endl;
 
 	// PyErr_Print();
 
-	std::cout << result << std::endl;
+	//std::cout << result << std::endl;
 	return 0;
 }
 
@@ -173,10 +173,10 @@ int insertDadosTemperatura(string dadoNovo) {
 	//std::cout << "6" << std::endl;
 
 	// Transforma em string do C++
-	auto result = _PyUnicode_AsString(pValue);
+	//auto result = _PyUnicode_AsString(pValue);
 	
 	//std::cout << "7" << std::endl;
 
-	std::cout << result << std::endl;
+	//std::cout << result << std::endl;
 	return 0;
 }
