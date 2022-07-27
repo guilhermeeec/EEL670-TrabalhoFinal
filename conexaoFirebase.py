@@ -7,46 +7,42 @@ import pandas as pd
 
 def getDadosTemp(coluna):
 
-    req= requests.get("https://trab-lingprog-default-rtdb.firebaseio.com/Temperatura.json")
-
+    # Acessa a nsosa plataforma do Firebase em nuvem
+    req = requests.get("https://trab-lingprog-default-rtdb.firebaseio.com/Temperatura.json")
     if (req.status_code != 200):
         print("Erro de requisicao.")
         exit(1)
     else:
         print("Requisicao realizada com sucesso.")
 
+    # Pega a resposta no formato JSON e cria tabela do pacote pandas
     data = pd.read_json(req.text)
     data["id"] = data.index
 
+    # Coleta as informacoes dos dados
     id = data["id"]
     timestamp = data["timestamp"].values
     temp = data["temperatura"].values
 
-    #print(timestamp)
-    #print(temp)
-
+    # Itera sobre tabela
     result = ""
-
     for index in range(len(data)):
     
+        # Monta string referente a um dado
         strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(temp[index])
         
+        # Insere dado no resultado
         if (index==0):
             result = strParcial
         else:
-        
-            resultTemp = result
-            strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(temp[index])
-            result = resultTemp + ";" + strParcial
-
-    #print(result)
+            result += ";" + strParcial
 
     return result
 
 def getDadosPorta(coluna):
 
+    # Acessa a nsosa plataforma do Firebase em nuvem
     req= requests.get("https://trab-lingprog-default-rtdb.firebaseio.com/StatusPorta.json")
-
     if (req.status_code != 200):
         print("Erro de requisicao.")
         exit(1)
@@ -54,38 +50,35 @@ def getDadosPorta(coluna):
         pass
         #print("Requisicao realizada com sucesso.")
 
+    # Pega a resposta no formato JSON e cria tabela do pacote pandas
     data = pd.read_json(req.text)
     data["id"] = data.index
 
+    # Coleta as informacoes dos dados
     id = data["id"]
     timestamp = data["timestamp"].values
     porta = data["aberta"].values
 
-    #print(timestamp)
-    #print(porta)
-
+    # Itera sobre tabela   
     result = ""
-
     for index in range(len(data)):
     
+        # Monta string referente a um dado
         strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(porta[index])
         
+        # Insere dado no resultado
         if (index==0):
             result = strParcial
         else:
-        
-            resultTemp = result
-            strParcial = str(id[index])+","+ str(timestamp[index])+","+ str(porta[index])
-            result = resultTemp + ";" + strParcial
+            result += ";" + strParcial
 
-    #print(result)
-    
     return result
 
 def insertDadosTemp(registro):
+
         # Credencial gerada em 'Configuracoes do projeto -> Contas de Servico -> Gerar nova chave privada'
         cred = credentials.Certificate("./credentials/trab-lingprog-firebase-adminsdk-nhkuh-3b53b7a136.json")
-
+        
         default_app = firebase_admin.initialize_app(cred, {
                 'databaseURL':'https://trab-lingprog-default-rtdb.firebaseio.com/'
                 })
@@ -93,20 +86,14 @@ def insertDadosTemp(registro):
         # Pensar em forma mais inteligente de organizar o DB
         # /Dados/2 -> o 2 corresponde  
         ref = db.reference("/Temperatura/")
-
         listaRegs = registro.split(";")
-
         matrizRegs = []
 
         for reg in listaRegs:
-
                 matrizRegs.append(reg.split(","))
 
-        #print(matrizRegs)
-
-
         for reg in matrizRegs:
-               
+        
                 # /Temperatura/<chave primaria 0, 1, 2>/<timestamp, temperatura>
                 ref.child(reg[0]).child("timestamp").set(int(reg[1]))
                 ref.child(reg[0]).child("temperatura").set(float(reg[2]))       
@@ -124,24 +111,13 @@ def insertDadosPorta(registro):
         # Pensar em forma mais inteligente de organizar o DB
         # /Dados/2 -> o 2 corresponde  
         ref = db.reference("/StatusPorta/")
-
         listaRegs = registro.split(";")
-
         matrizRegs = []
 
         for reg in listaRegs:
-
                 matrizRegs.append(reg.split(","))
 
-        #print(matrizRegs)
-
-
         for reg in matrizRegs:
-
-                #print(f"id {reg[0]}")
-                #print(f"timestamp: {reg[1]}")
-                #print(f"aberta: {reg[2]}\n")
-
                
                 # /StatusPorta/<chave primaria 0, 1, 2>/<timestamp, aberta>
                 ref.child(reg[0]).child("timestamp").set(int(reg[1]))
@@ -149,6 +125,7 @@ def insertDadosPorta(registro):
         
         return 0
 
+# Teste 
 if __name__ == "__main__":
     getDadosTemp("")
     getDadosPorta("")
